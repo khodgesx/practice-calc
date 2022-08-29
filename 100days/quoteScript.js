@@ -5,11 +5,25 @@ const quoteText = document.getElementById('quote');
 const authorText = document.getElementById('author');
 const twitterBtn = document.getElementById('twitter');
 const newQuoteBtn = document.getElementById('new-quote');
+const loader = document.getElementById('loader');
 
 let apiQuotes = []
 
+// Show Loading
+const loading =()=>{
+    loader.hidden = false ;//hiding the div is false aka not hidden
+    quoteContainer.hidden = true;
+}
+
+//Hide Loading
+const complete=()=>{
+    quoteContainer.hidden = false;
+    loader.hidden = true;
+}
+
 //Show New Quote
 const newQuote=()=>{
+    loading(); 
     //random number between 0 and 1 and multiply that by length of array
     //combine with math floor = return the largest whole number less than or qual to given number
 
@@ -22,7 +36,7 @@ const newQuote=()=>{
 
     //check if author field is blank and replace with unknown
     quote.author ? authorText.innerText = quote.author : authorText.innerText = 'Unknown'
-    
+    complete();
 }
 //Using Local Quotes file if API crashes or doesn't work
 // const localQuoteGet =()=>{
@@ -30,6 +44,7 @@ const newQuote=()=>{
 //     console.log(quote2)
 // }
 const getQuotes = async()=>{
+    loading();
     const apiUrl = 'https://jacintodesign.github.io/quotes-api/data/quotes.json';
     try{
         const response = await fetch(apiUrl);
