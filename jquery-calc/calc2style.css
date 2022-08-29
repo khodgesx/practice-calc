@@ -6,11 +6,20 @@ body{
     margin: 0;
     min-height: 100vh; 
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
 }
-
+#title{
+    color:rgb(247, 130, 98);
+    font-family: monospace;
+    font-size: 2.5rem;
+    border-radius: 50%;
+    margin-bottom: 50px;
+    padding: 5px 30px;
+    box-shadow: 0 5px 30px -5px rgba(187, 193, 84, 0.8);
+}
 .calculator {
     background-color: white;
     width: 400px;
