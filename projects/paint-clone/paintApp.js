@@ -20,8 +20,8 @@ let currentSize = 10; //brush size
 let bucketColor = '#FFFFFF';
 let currentColor = '#A51DAB';
 let isEraser = false;
-// let isMouseDown = false;
-// let drawnArray = [];
+let isMouseDown = false;
+let drawnArray = [];
 
 // Formatting Brush Size
 function displayBrushSize() {
@@ -126,8 +126,8 @@ function createCanvas() {
 function getMousePosition(event) {
   const boundaries = canvas.getBoundingClientRect();
   return {
-    x: event.clientX - boundaries.left,
-    y: event.clientY - boundaries.top,
+    x: event.clientX - boundaries.left, //x and 
+    y: event.clientY - boundaries.top,  //y coordinates
   };
 }
 
