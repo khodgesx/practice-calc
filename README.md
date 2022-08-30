@@ -1,1 +1,3 @@
-# practice-calc
+# practice-projects
+
+practicing some Frontend projects
